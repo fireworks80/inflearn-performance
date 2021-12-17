@@ -10,6 +10,7 @@ function getParametersForUnsplash({ width, height, quality, format }) {
 }
 
 function removeSpecialCharacter(str) {
+  /*
   const removeCharacters = ['#', '_', '*', '~', '&', ';', '!', '[', ']', '`', '>', '\n', '=', '-'];
   let _str = str;
   let i = 0,
@@ -25,6 +26,11 @@ function removeSpecialCharacter(str) {
       j++;
     }
   }
+  */
+
+  let _str = str.substring(0, 300);
+
+  _str.replace(/[{}[\]/?.,;:|)*~`!^\-_+<>@#$%&\\=('"]/gi, '');
 
   return _str;
 }

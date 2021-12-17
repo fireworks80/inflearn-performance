@@ -35,3 +35,21 @@ Contents Delivery Nework
 
 **image CDN**
 이미지를 사용자에게 보내기 전에 특정 형태로의 처리과정을 거쳐서 보내 준다.
+
+## bottlenect 최적화
+
+![network](./assets/performance-network.png)
+회색 선은 callback을 나타낸다.
+
+![frames](./assets/performance-frames.png)
+
+- DCL: domcontentloaded
+- FP: First Paint
+- FCP: First Content Paint
+- L: onLoad
+
+이 요소들이 있는 부분이 실제 화면에 그려지는 때
+
+![main](./assets/performance-main.png)
+network의 회색선(callback)부분에서의 javascript code
+그중 Article => 컴포넌트 명, 그 아래 remove....(Article 컴포넌트)안의 removeCharictor 함수실행, 이 함수 중간 중간 진한 노란색은 이 함수들이 너무 오래 사용되므로 가비지 컬랙터에 의해 끊은 모습이다.(메모리의 여유가 없을 때 메모리를 한번 정리 해준다)
