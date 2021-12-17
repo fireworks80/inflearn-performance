@@ -12,6 +12,8 @@
     "react-markdown": "^7.1.1",
     "react-router-dom": "^6.1.1",
     "react-scripts": "5.0.0",
+    "react-syntax-highlighter": "^15.4.5",
+    "serve": "^13.0.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -19,6 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "serve": "npm run build && node ./node_modules/serve/bin/serve.js -u -s build",
     "server": "node ./node_modules/json-server/lib/cli/bin.js --watch ./server/database.json -c ./server/config.json"
   },
   "eslintConfig": {
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "cra-bundle-analyzer": "^0.1.0",
     "json-server": "^0.17.0",
     "server": "^1.0.37"
   }

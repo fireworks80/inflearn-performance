@@ -53,3 +53,25 @@ Contents Delivery Nework
 ![main](./assets/performance-main.png)
 network의 회색선(callback)부분에서의 javascript code
 그중 Article => 컴포넌트 명, 그 아래 remove....(Article 컴포넌트)안의 removeCharictor 함수실행, 이 함수 중간 중간 진한 노란색은 이 함수들이 너무 오래 사용되므로 가비지 컬랙터에 의해 끊은 모습이다.(메모리의 여유가 없을 때 메모리를 한번 정리 해준다)
+
+## bundle file split
+
+### webpack-bundle-analyzer
+
+- cra의 eject를 해서 webpack.config파일을 수정해야 한다.
+- 또는 webpack.config를 커스텀할 수 있는 라이브러리를 사용해야 한다.
+
+cra-bundle-analyzer를 사용하면 위의 두가지를 안해도 된다.
+
+### code splitting
+
+- 페이지 별로..
+- 모듈 별로..
+
+중요한것은 불필요한 코드,중복코드 없이 적절한 사이즈의 코드가 적절한 타이밍에 로드될 수 있도록 하는 것
+
+Route-based code splitting
+라우팅 단위로 코드 스플리팅 한다.
+
+코드 스플리팅은 실제로 webpack에서 하는 부분이므로 webpack설정을 수정한다.
+cra에서는 기본적으로 설정이 되어 있으므로 코드만 잘 짜주면 된다.
